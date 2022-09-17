@@ -21,4 +21,16 @@ public class Shop {
     public void clearStock(){
         this.stock.clear();
     }
+
+    public int getStockQuantity(){
+        return this.stock.size();
+    }
+
+    public double calcTotPotentialProfit(){
+        double profit = 0.00;
+        for (ISell item : this.stock) {
+            profit += item.calculateMarkup();
+        }
+        return profit;
+    }
 }
