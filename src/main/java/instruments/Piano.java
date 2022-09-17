@@ -1,6 +1,6 @@
 package instruments;
 
-public class Piano extends Instrument implements IPlay {
+public class Piano extends Instrument {
 
     private int numberOfKeys;
     private PianoType pianoType;
@@ -20,6 +20,7 @@ public class Piano extends Instrument implements IPlay {
         this.pianoType = pianoType;
     }
 
+    @Override
     public String play(){
         return "plink-a-plink-a-plink-a-plink";
     }

@@ -1,5 +1,6 @@
 package accessories;
 
+import instruments.IPlay;
 import shop.ISell;
 
 public abstract class Accessory implements ISell {

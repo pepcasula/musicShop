@@ -2,7 +2,7 @@ package instruments;
 
 import shop.ISell;
 
-public abstract class Instrument implements ISell {
+public abstract class Instrument implements ISell, IPlay {
 
     private String description;
     private String brand;
@@ -71,4 +71,6 @@ public abstract class Instrument implements ISell {
     public void setColour(String colour) {
         this.colour = colour;
     }
+
+    public abstract String play();
 }
