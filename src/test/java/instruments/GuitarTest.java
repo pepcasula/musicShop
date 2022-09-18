@@ -146,7 +146,7 @@ public class GuitarTest {
 
     @Test
     public void canGetInsuranceFactor(){
-        assertEquals(32, guitar.GetInsuranceFactor());
+        assertEquals(32, guitar.getInsuranceFactor());
     }
 
 }

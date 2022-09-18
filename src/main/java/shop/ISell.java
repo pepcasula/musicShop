@@ -11,4 +11,10 @@ public interface ISell {
     double getWholesalePrice();
 
     void setWholesalePrice(double wholesalePrice);
+
+    int getDeliveryFactor();
+
+    int getInsuranceFactor();
+
+    int getSetupFactor();
 }

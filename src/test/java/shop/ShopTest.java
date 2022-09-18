@@ -202,11 +202,37 @@ public class ShopTest {
     }
 
     @Test
-    public void canCheckout(){
+    public void getBasketAmount(){
         shop.addToBasket(guitar);
         shop.addToBasket(case1);
         shop.addToBasket(otherAccessory);
         assertEquals(1014.80, shop.checkout(), 0.0);
     }
 
+    @Test
+    public void canCalcDelivery(){
+        shop.addToBasket(guitar);
+        shop.addToBasket(case1);
+        shop.addToBasket(otherAccessory);
+        assertEquals(35.00, shop.calcDelivery(), 0.0);
+
+    }
+
+    @Test
+    public void canCalcInsurance(){
+        shop.addItemsToStock(sparePart);
+        shop.addToBasket(guitar);
+        shop.addToBasket(sparePart);
+        assertEquals(32.00, shop.calcInsurance(guitar), 0.0);
+        assertEquals(0.00, shop.calcInsurance(sparePart), 0.0);
+    }
+
+    @Test
+    public void canCalcSetupCost(){
+        shop.addItemsToStock(sparePart);
+        shop.addToBasket(guitar);
+        shop.addToBasket(sparePart);
+        assertEquals(24.00, shop.calcSetup(guitar), 0.0);
+        assertEquals(0.00, shop.calcSetup(sparePart), 0.0);
+    }
 }

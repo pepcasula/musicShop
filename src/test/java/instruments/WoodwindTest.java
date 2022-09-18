@@ -147,6 +147,6 @@ public class WoodwindTest {
 
     @Test
     public void canGetInsuranceFactor(){
-        assertEquals(200, woodwind.GetInsuranceFactor());
+        assertEquals(200, woodwind.getInsuranceFactor());
     }
 }

@@ -144,6 +144,6 @@ public class PianoTest {
 
     @Test
     public void canGetInsuranceFactor(){
-        assertEquals(488, piano.GetInsuranceFactor());
+        assertEquals(488, piano.getInsuranceFactor());
     }
 }

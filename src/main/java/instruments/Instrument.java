@@ -103,7 +103,7 @@ public abstract class Instrument implements ISell, IPlay {
         this.setupFactor = setupFactor;
     }
 
-    public int GetInsuranceFactor(){
+    public int getInsuranceFactor(){
         return this.insuranceFactor;
     }
 }

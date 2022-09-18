@@ -69,4 +69,31 @@ public class Shop {
         }
         return basketAmount;
     }
+
+    public double calcDelivery() {
+        double total = 0.00;
+        for (ISell item : this.basket) {
+            double factor = item.getDeliveryFactor();
+            total += factor * 5;
+        }
+        return total;
+    }
+
+    public double calcInsurance(ISell item){
+        double insurance = 0.00;
+        double factor = item.getInsuranceFactor();
+        if (this.basket.contains(item) && factor >= 5){
+            insurance = factor;
+        }
+        return insurance;
+    }
+
+    public double calcSetup(ISell item){
+        double setupCost = 0;
+        double factor = item.getSetupFactor();
+        if (this.basket.contains(item) && factor !=0){
+            setupCost = factor * 12;
+        }
+        return setupCost;
+    }
 }
