@@ -202,11 +202,11 @@ public class ShopTest {
     }
 
     @Test
-    public void getBasketAmount(){
+    public void canGetBasketAmount(){
         shop.addToBasket(guitar);
         shop.addToBasket(case1);
         shop.addToBasket(otherAccessory);
-        assertEquals(1014.80, shop.checkout(), 0.0);
+        assertEquals(1014.80, shop.getBasketAmount(), 0.0);
     }
 
     @Test

@@ -60,7 +60,7 @@ public class Shop {
         return this.basket.size();
     }
 
-    public double checkout(){
+    public double getBasketAmount(){
         double basketAmount = 0.00;
         for (ISell item : this.basket){
             if (countBasketItems() != 0){
