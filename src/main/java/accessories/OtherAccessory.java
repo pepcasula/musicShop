@@ -9,9 +9,18 @@ public class OtherAccessory extends Accessory {
             String brand,
             double wholesalePrice,
             double price,
-            OtherCategory otherCategory
+            OtherCategory otherCategory,
+            int deliveryFactor,
+            int setupFactor
     ) {
-        super(description, brand, wholesalePrice, price);
+        super(
+                description,
+                brand,
+                wholesalePrice,
+                price,
+                deliveryFactor,
+                setupFactor
+        );
         this.otherCategory = otherCategory;
     }
 

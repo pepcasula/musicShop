@@ -19,7 +19,9 @@ public class GuitarTest {
                 "Ash",
                 "Antique brown stain burst",
                 4,
-                GuitarType.ELECTRIC_BASS
+                GuitarType.ELECTRIC_BASS,
+                4,
+                2
         );
     }
 
@@ -119,4 +121,32 @@ public class GuitarTest {
         guitar.setType(GuitarType.ACOUSTIC_BASS);
         assertEquals(GuitarType.ACOUSTIC_BASS, guitar.getType());
     }
+
+    @Test
+    public void canGetDeliveryFactor(){
+        assertEquals(4, guitar.getDeliveryFactor());
+    }
+
+    @Test
+    public void canSetDeliveryFactor(){
+        guitar.setDeliveryFactor(3);
+        assertEquals(3, guitar.getDeliveryFactor());
+    }
+
+    @Test
+    public void canGetSetupFactor(){
+        assertEquals(2, guitar.getSetupFactor());
+    }
+
+    @Test
+    public void canSetSetupFactor(){
+        guitar.setSetupFactor(1);
+        assertEquals(1, guitar.getSetupFactor());
+    }
+
+    @Test
+    public void canGetInsuranceFactor(){
+        assertEquals(32, guitar.GetInsuranceFactor());
+    }
+
 }

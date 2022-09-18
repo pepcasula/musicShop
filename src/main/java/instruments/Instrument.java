@@ -10,14 +10,29 @@ public abstract class Instrument implements ISell, IPlay {
     private double price;
     private String material;
     private String colour;
+    private int deliveryFactor;
+    private int setupFactor;
+    private int insuranceFactor;
 
-    public Instrument(String description, String brand, double wholesalePrice, double price, String material, String colour) {
+    public Instrument(
+            String description,
+            String brand,
+            double wholesalePrice,
+            double price,
+            String material,
+            String colour,
+            int deliveryFactor,
+            int setupFactor
+    ) {
         this.description = description;
         this.brand = brand;
         this.wholesalePrice = wholesalePrice;
         this.price = price;
         this.material = material;
         this.colour = colour;
+        this.deliveryFactor = deliveryFactor;
+        this.setupFactor = setupFactor;
+        this.insuranceFactor = (int)Math.round(this.price / 25);
     }
 
     public double calculateMarkup() {
@@ -72,5 +87,23 @@ public abstract class Instrument implements ISell, IPlay {
         this.colour = colour;
     }
 
-    public abstract String play();
+    public int getDeliveryFactor() {
+        return deliveryFactor;
+    }
+
+    public void setDeliveryFactor(int deliveryFactor) {
+        this.deliveryFactor = deliveryFactor;
+    }
+
+    public int getSetupFactor() {
+        return setupFactor;
+    }
+
+    public void setSetupFactor(int setupFactor) {
+        this.setupFactor = setupFactor;
+    }
+
+    public int GetInsuranceFactor(){
+        return this.insuranceFactor;
+    }
 }

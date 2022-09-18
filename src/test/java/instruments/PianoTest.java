@@ -18,7 +18,9 @@ public class PianoTest {
                 "Wood",
                 "Ebony",
                 88,
-                PianoType.GRAND
+                PianoType.GRAND,
+                10,
+                10
                 );
     }
 
@@ -116,5 +118,32 @@ public class PianoTest {
     public void canSetType(){
         piano.setType(PianoType.UPRIGHT_DIGITAL);
         assertEquals(PianoType.UPRIGHT_DIGITAL, piano.getType());
+    }
+
+    @Test
+    public void canGetDeliveryFactor(){
+        assertEquals(10, piano.getDeliveryFactor());
+    }
+
+    @Test
+    public void canSetDeliveryFactor(){
+        piano.setDeliveryFactor(8);
+        assertEquals(8, piano.getDeliveryFactor());
+    }
+
+    @Test
+    public void canGetSetupFactor(){
+        assertEquals(10, piano.getSetupFactor());
+    }
+
+    @Test
+    public void canSetSetupFactor(){
+        piano.setSetupFactor(0);
+        assertEquals(0, piano.getSetupFactor());
+    }
+
+    @Test
+    public void canGetInsuranceFactor(){
+        assertEquals(488, piano.GetInsuranceFactor());
     }
 }

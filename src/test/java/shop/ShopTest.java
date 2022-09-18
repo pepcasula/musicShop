@@ -19,7 +19,7 @@ public class ShopTest {
     Woodwind woodwind;
     Case1 case1;
     OtherAccessory otherAccessory;
-    SparePart partSpare;
+    SparePart sparePart;
     Book book;
     SheetMusic sheetMusic;
 
@@ -34,7 +34,9 @@ public class ShopTest {
                 "Ash",
                 "Antique brown stain burst",
                 4,
-                GuitarType.ELECTRIC_BASS
+                GuitarType.ELECTRIC_BASS,
+                4,
+                2
         );
 
         piano = new Piano(
@@ -45,7 +47,9 @@ public class ShopTest {
                 "Wood",
                 "Ebony",
                 88,
-                PianoType.GRAND
+                PianoType.GRAND,
+                10,
+                10
         );
 
         woodwind = new Woodwind(
@@ -56,7 +60,9 @@ public class ShopTest {
                 "Brass",
                 "Gold",
                 WoodwindType.SAXOPHONE,
-                "Selmer S80 C"
+                "Selmer S80 C",
+                4,
+                4
         );
 
         case1 = new Case1(
@@ -65,7 +71,9 @@ public class ShopTest {
                 42.90,
                 54.90,
                 CaseType.GUITAR_BAG,
-                "Brown"
+                "Brown",
+                2,
+                0
         );
 
         otherAccessory = new OtherAccessory(
@@ -73,15 +81,19 @@ public class ShopTest {
                 "Sennheiser",
                 125.90,
                 169.90,
-                OtherCategory.STUDIO_EQUIPMENT
+                OtherCategory.STUDIO_EQUIPMENT,
+                1,
+                0
         );
 
-        partSpare = new SparePart(
+        sparePart = new SparePart(
                 "22\" Bass Drumhead PTH-22PL",
                 "Pearl",
                 38.90,
                 47.90,
-                SparePartType.DRUMS_PART
+                SparePartType.DRUMS_PART,
+                2,
+                0
         );
 
         book = new Book(
@@ -91,7 +103,9 @@ public class ShopTest {
                 "Dover Publications",
                 192,
                 8.50,
-                11.00
+                11.00,
+                1,
+                0
         );
 
         sheetMusic = new SheetMusic(
@@ -101,7 +115,9 @@ public class ShopTest {
                 "Faber Music",
                 27,
                 9.50,
-                13.00
+                13.00,
+                1,
+                0
         );
 
         shop = new Shop();
@@ -115,7 +131,7 @@ public class ShopTest {
 
     @Test
     public void canAddToStock(){
-        shop.addItemsToStock(partSpare);
+        shop.addItemsToStock(sparePart);
         shop.addItemsToStock(book);
         shop.addItemsToStock(sheetMusic);
         assertEquals(7, shop.getStockQuantity());
@@ -141,7 +157,7 @@ public class ShopTest {
     @Test
     public void canGetTotPotentialProfit(){
         shop.addItemsToStock(woodwind);
-        shop.addItemsToStock(partSpare);
+        shop.addItemsToStock(sparePart);
         shop.addItemsToStock(book);
         shop.addItemsToStock(sheetMusic);
         assertEquals(2396.00, shop.calcTotPotentialProfit(), 0.0);

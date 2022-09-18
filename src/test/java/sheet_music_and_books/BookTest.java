@@ -18,7 +18,9 @@ public class BookTest {
                 "Dover Publications",
                 192,
                 8.50,
-                11.00
+                11.00,
+                1,
+                0
         );
     }
 
@@ -102,5 +104,33 @@ public class BookTest {
     public void canSetPages(){
         book.setPages(132);
         assertEquals(132, book.getPages());
+    }
+
+    @Test
+    public void canGetDeliveryFactor(){
+        assertEquals(1, book.getDeliveryFactor());
+    }
+
+    @Test
+    public void canSetDeliveryFactor(){
+        book.setDeliveryFactor(3);
+        assertEquals(3, book.getDeliveryFactor());
+    }
+
+    @Test
+    public void canGetSetupFactor(){
+        assertEquals(0, book.getSetupFactor());
+    }
+
+    @Test
+    public void canSetSetupFactor(){
+        book.setSetupFactor(1);
+        assertEquals(1, book.getSetupFactor());
+    }
+
+    @Test
+    public void hasZeroInsuranceFactor(){
+        book.setPrice(20000.00);
+        assertEquals(0, book.getInsuranceFactor());
     }
 }

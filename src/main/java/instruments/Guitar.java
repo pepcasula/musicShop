@@ -8,13 +8,25 @@ public class Guitar extends Instrument {
     public Guitar(
             String description,
             String brand,
-            double wholesalePrice,double price,
+            double wholesalePrice,
+            double price,
             String material,
             String colour,
             int numberOfStrings,
-            GuitarType guitarType
+            GuitarType guitarType,
+            int deliveryFactor,
+            int setupFactor
     ) {
-        super(description, brand, wholesalePrice, price, material, colour);
+        super(
+                description,
+                brand,
+                wholesalePrice,
+                price,
+                material,
+                colour,
+                deliveryFactor,
+                setupFactor
+        );
         this.numberOfStrings = numberOfStrings;
         this.guitarType = guitarType;
     }

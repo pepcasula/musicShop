@@ -19,7 +19,9 @@ public class WoodwindTest {
                 "Brass",
                 "Gold",
                 WoodwindType.SAXOPHONE,
-                "Selmer S80 C"
+                "Selmer S80 C",
+                4,
+                4
         );
     }
 
@@ -119,5 +121,32 @@ public class WoodwindTest {
     public void canSetMouthpiece(){
         woodwind.setMouthpiece("Yamaha 4CM");
         assertEquals("Yamaha 4CM", woodwind.getMouthpiece());
+    }
+
+    @Test
+    public void canGetDeliveryFactor(){
+        assertEquals(4, woodwind.getDeliveryFactor());
+    }
+
+    @Test
+    public void canSetDeliveryFactor(){
+        woodwind.setDeliveryFactor(3);
+        assertEquals(3, woodwind.getDeliveryFactor());
+    }
+
+    @Test
+    public void canGetSetupFactor(){
+        assertEquals(4, woodwind.getSetupFactor());
+    }
+
+    @Test
+    public void canSetSetupFactor(){
+        woodwind.setSetupFactor(5);
+        assertEquals(5, woodwind.getSetupFactor());
+    }
+
+    @Test
+    public void canGetInsuranceFactor(){
+        assertEquals(200, woodwind.GetInsuranceFactor());
     }
 }

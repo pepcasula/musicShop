@@ -17,7 +17,9 @@ public class CaseTest {
                 42.90,
                 54.90,
                 CaseType.GUITAR_BAG,
-                "Brown"
+                "Brown",
+                2,
+                0
         );
     }
 
@@ -90,5 +92,32 @@ public class CaseTest {
     public void canSetColour(){
         case1.setColour("Bronze");
         assertEquals("Bronze", case1.getColour());
+    }
+
+    @Test
+    public void canGetDeliveryFactor(){
+        assertEquals(2, case1.getDeliveryFactor());
+    }
+
+    @Test
+    public void canSetDeliveryFactor(){
+        case1.setDeliveryFactor(1);
+        assertEquals(1, case1.getDeliveryFactor());
+    }
+
+    @Test
+    public void canGetSetupFactor(){
+        assertEquals(0, case1.getSetupFactor());
+    }
+
+    @Test
+    public void canSetSetupFactor(){
+        case1.setSetupFactor(1);
+        assertEquals(1, case1.getSetupFactor());
+    }
+
+    @Test
+    public void canGetInsuranceFactor(){
+        assertEquals(2, case1.getInsuranceFactor());
     }
 }

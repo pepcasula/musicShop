@@ -13,9 +13,11 @@ public class Piano extends Instrument {
             String material,
             String colour,
             int numberOfKeys,
-            PianoType pianoType
+            PianoType pianoType,
+            int deliveryFactor,
+            int setupFactor
     ) {
-        super(description, brand, wholesalePrice, price, material, colour);
+        super(description, brand, wholesalePrice, price, material, colour, deliveryFactor, setupFactor);
         this.numberOfKeys = numberOfKeys;
         this.pianoType = pianoType;
     }

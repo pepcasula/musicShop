@@ -5,8 +5,26 @@ public class SheetMusic extends SheetMusicAndBooks {
     String description;
     MusicGenre musicGenre;
 
-    public SheetMusic(String title, String description, MusicGenre musicGenre, String publisher, int pages, double wholesalePrice, double price) {
-        super(title, publisher, pages, wholesalePrice, price);
+    public SheetMusic(
+            String title,
+            String description,
+            MusicGenre musicGenre,
+            String publisher,
+            int pages,
+            double wholesalePrice,
+            double price,
+            int deliveryFactor,
+            int setupFactor
+    ) {
+        super(
+                title,
+                publisher,
+                pages,
+                wholesalePrice,
+                price,
+                deliveryFactor,
+                setupFactor
+        );
         this.description = description;
         this.musicGenre = musicGenre;
     }

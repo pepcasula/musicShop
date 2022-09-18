@@ -5,8 +5,26 @@ public class Book extends SheetMusicAndBooks {
     String author;
     BookGenre genre;
 
-    public Book(String author, String title, BookGenre genre, String publisher, int pages, double wholesalePrice, double price) {
-        super(title, publisher, pages, wholesalePrice, price);
+    public Book(
+            String author,
+            String title,
+            BookGenre genre,
+            String publisher,
+            int pages,
+            double wholesalePrice,
+            double price,
+            int deliveryFactor,
+            int setupFactor
+    ) {
+        super(
+                title,
+                publisher,
+                pages,
+                wholesalePrice,
+                price,
+                deliveryFactor,
+                setupFactor
+        );
         this.author = author;
         this.genre = genre;
     }

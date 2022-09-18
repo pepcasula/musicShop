@@ -18,7 +18,9 @@ public class SheetMusicTest {
                 "Faber Music",
                 27,
                 9.50,
-                13.00
+                13.00,
+                1,
+                0
         );
     }
 
@@ -106,5 +108,31 @@ public class SheetMusicTest {
         assertEquals(32, sheetMusic.getPages());
     }
 
+    @Test
+    public void canGetDeliveryFactor(){
+        assertEquals(1, sheetMusic.getDeliveryFactor());
+    }
 
+    @Test
+    public void canSetDeliveryFactor(){
+        sheetMusic.setDeliveryFactor(3);
+        assertEquals(3, sheetMusic.getDeliveryFactor());
+    }
+
+    @Test
+    public void canGetSetupFactor(){
+        assertEquals(0, sheetMusic.getSetupFactor());
+    }
+
+    @Test
+    public void canSetSetupFactor(){
+        sheetMusic.setSetupFactor(1);
+        assertEquals(1, sheetMusic.getSetupFactor());
+    }
+
+    @Test
+    public void hasZeroInsuranceFactor(){
+        sheetMusic.setPrice(20000.00);
+        assertEquals(0, sheetMusic.getInsuranceFactor());
+    }
 }

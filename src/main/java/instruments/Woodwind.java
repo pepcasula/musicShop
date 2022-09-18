@@ -13,9 +13,11 @@ public class Woodwind extends Instrument {
             String material,
             String colour,
             WoodwindType woodwindType,
-            String mouthpiece
+            String mouthpiece,
+            int deliveryFactor,
+            int setupFactor
     ) {
-        super(description, brand, wholesalePrice, price, material, colour);
+        super(description, brand, wholesalePrice, price, material, colour, deliveryFactor, setupFactor);
         this.woodwindType = woodwindType;
         this.mouthpiece = mouthpiece;
     }

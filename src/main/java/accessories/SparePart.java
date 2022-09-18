@@ -9,9 +9,18 @@ public class SparePart extends Accessory{
             String brand,
             double wholesalePrice,
             double price,
-            SparePartType sparePartType
+            SparePartType sparePartType,
+            int deliveryFactor,
+            int setupFactor
     ) {
-        super(description, brand, wholesalePrice, price);
+        super(
+                description,
+                brand,
+                wholesalePrice,
+                price,
+                deliveryFactor,
+                setupFactor
+        );
         this.sparePartType = sparePartType;
     }
 

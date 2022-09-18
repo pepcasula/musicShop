@@ -16,7 +16,9 @@ public class OtherAccessoryTest {
                 "Sennheiser",
                 125.90,
                 169.90,
-                OtherCategory.STUDIO_EQUIPMENT
+                OtherCategory.STUDIO_EQUIPMENT,
+                1,
+                0
         );
     }
 
@@ -78,5 +80,32 @@ public class OtherAccessoryTest {
     public void canSetItemCategory(){
         otherAccessory.setType(OtherCategory.STAGE_EQUIPMENT);
         assertEquals(OtherCategory.STAGE_EQUIPMENT, otherAccessory.getType());
+    }
+
+    @Test
+    public void canGetDeliveryFactor(){
+        assertEquals(1, otherAccessory.getDeliveryFactor());
+    }
+
+    @Test
+    public void canSetDeliveryFactor(){
+        otherAccessory.setDeliveryFactor(0);
+        assertEquals(0, otherAccessory.getDeliveryFactor());
+    }
+
+    @Test
+    public void canGetSetupFactor(){
+        assertEquals(0, otherAccessory.getSetupFactor());
+    }
+
+    @Test
+    public void canSetSetupFactor(){
+        otherAccessory.setSetupFactor(3);
+        assertEquals(3, otherAccessory.getSetupFactor());
+    }
+
+    @Test
+    public void canGetInsuranceFactor(){
+        assertEquals(6, otherAccessory.getInsuranceFactor());
     }
 }

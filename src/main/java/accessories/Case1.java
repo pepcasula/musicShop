@@ -11,9 +11,18 @@ public class Case1 extends Accessory {
             double wholesalePrice,
             double price,
             CaseType caseType,
-            String colour
+            String colour,
+            int deliveryFactor,
+            int setupFactor
     ) {
-        super(description, brand, wholesalePrice, price);
+        super(
+                description,
+                brand,
+                wholesalePrice,
+                price,
+                deliveryFactor,
+                setupFactor
+        );
         this.caseType = caseType;
         this.colour = colour;
     }

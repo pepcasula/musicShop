@@ -16,7 +16,9 @@ public class SparePartTest {
                 "Pearl",
                 38.90,
                 47.90,
-                SparePartType.DRUMS_PART
+                SparePartType.DRUMS_PART,
+                2,
+                0
         );
     }
     
@@ -78,5 +80,32 @@ public class SparePartTest {
     public void canSetSparePartType(){
         partSpare.setSparePartType(SparePartType.PIANO_PART);
         assertEquals(SparePartType.PIANO_PART, partSpare.getSparePartType());
+    }
+
+    @Test
+    public void canGetDeliveryFactor(){
+        assertEquals(2, partSpare.getDeliveryFactor());
+    }
+
+    @Test
+    public void canSetDeliveryFactor(){
+        partSpare.setDeliveryFactor(0);
+        assertEquals(0, partSpare.getDeliveryFactor());
+    }
+
+    @Test
+    public void canGetSetupFactor(){
+        assertEquals(0, partSpare.getSetupFactor());
+    }
+
+    @Test
+    public void canSetSetupFactor(){
+        partSpare.setSetupFactor(3);
+        assertEquals(3, partSpare.getSetupFactor());
+    }
+
+    @Test
+    public void canGetInsuranceFactor(){
+        assertEquals(1, partSpare.getInsuranceFactor());
     }
 }
