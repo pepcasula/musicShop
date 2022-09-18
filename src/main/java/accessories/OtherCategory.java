@@ -1,6 +1,6 @@
 package accessories;
 
-public enum ItemCategory {
+public enum OtherCategory {
     STUDIO_EQUIPMENT,
     STAGE_EQUIPMENT,
     METRONOMES,

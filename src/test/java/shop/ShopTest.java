@@ -9,9 +9,7 @@ import sheet_music_and_books.BookGenre;
 import sheet_music_and_books.MusicGenre;
 import sheet_music_and_books.SheetMusic;
 
-import java.util.ArrayList;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class ShopTest {
 
@@ -19,9 +17,9 @@ public class ShopTest {
     Guitar guitar;
     Piano piano;
     Woodwind woodwind;
-    Case case1;
+    Case1 case1;
     OtherAccessory otherAccessory;
-    PartSpare partSpare;
+    SparePart partSpare;
     Book book;
     SheetMusic sheetMusic;
 
@@ -61,12 +59,13 @@ public class ShopTest {
                 "Selmer S80 C"
         );
 
-        case1 = new Case(
+        case1 = new Case1(
                 "Bass Guitar Bag KPEB99",
                 "Kinsman",
                 42.90,
                 54.90,
-                CaseType.GUITAR_BAG
+                CaseType.GUITAR_BAG,
+                "Brown"
         );
 
         otherAccessory = new OtherAccessory(
@@ -74,15 +73,15 @@ public class ShopTest {
                 "Sennheiser",
                 125.90,
                 169.90,
-                ItemCategory.STUDIO_EQUIPMENT
+                OtherCategory.STUDIO_EQUIPMENT
         );
 
-        partSpare = new PartSpare(
+        partSpare = new SparePart(
                 "22\" Bass Drumhead PTH-22PL",
                 "Pearl",
                 38.90,
                 47.90,
-                SparePartType.DRUM_PART
+                SparePartType.DRUMS_PART
         );
 
         book = new Book(
@@ -147,4 +146,51 @@ public class ShopTest {
         shop.addItemsToStock(sheetMusic);
         assertEquals(2396.00, shop.calcTotPotentialProfit(), 0.0);
     }
+
+    @Test
+    public void willNotAddToBasketIfNotInStock(){
+        shop.addToBasket(guitar);       // in stock
+        shop.addToBasket(woodwind);     // not in stock
+        shop.addToBasket(book);         //not in stock
+        assertEquals(1, shop.countBasketItems());
+    }
+
+    @Test
+    public void canAddToBasket(){
+        shop.addToBasket(guitar);
+        shop.addToBasket(case1);
+        assertEquals(2, shop.countBasketItems());
+    }
+
+    @Test
+    public void canRemoveFromBasket(){
+        shop.addToBasket(guitar);
+        shop.addToBasket(case1);
+        shop.removeFromBasket(case1);
+        assertEquals(1, shop.countBasketItems());
+    }
+
+    @Test
+    public void canClearBasket(){
+        shop.addToBasket(guitar);
+        shop.addToBasket(case1);
+        assertFalse(shop.countBasketItems() == 0);
+        shop.clearBasket();
+        assertTrue(shop.countBasketItems() == 0);
+    }
+
+    @Test
+    public void canCountBasketItems(){
+        shop.addToBasket(guitar);
+        assertTrue(shop.countBasketItems() == 1);
+    }
+
+    @Test
+    public void canCheckout(){
+        shop.addToBasket(guitar);
+        shop.addToBasket(case1);
+        shop.addToBasket(otherAccessory);
+        assertEquals(1014.80, shop.checkout(), 0.0);
+    }
+
 }

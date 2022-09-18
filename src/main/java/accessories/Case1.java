@@ -1,18 +1,21 @@
 package accessories;
 
-public class Case extends Accessory {
+public class Case1 extends Accessory {
 
     CaseType caseType;
+    String colour;
 
-    public Case(
+    public Case1(
             String description,
             String brand,
             double wholesalePrice,
             double price,
-            CaseType caseType
+            CaseType caseType,
+            String colour
     ) {
         super(description, brand, wholesalePrice, price);
         this.caseType = caseType;
+        this.colour = colour;
     }
 
     public CaseType getCaseType() {
@@ -21,5 +24,13 @@ public class Case extends Accessory {
 
     public void setCaseType(CaseType caseType) {
         this.caseType = caseType;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
     }
 }

@@ -2,7 +2,7 @@ package instruments;
 
 public enum GuitarType {
     CLASSICAL,
-    ACOUSTICAL,
+    ACOUSTIC,
     SEMI_ACOUSTIC,
     ELECTRIC,
     ACOUSTIC_BASS,

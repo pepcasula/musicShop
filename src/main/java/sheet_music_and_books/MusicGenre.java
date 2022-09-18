@@ -7,6 +7,5 @@ public enum MusicGenre {
     JAZZ,
     OPERA,
     POP_ROCK,
-    TV_FILM,
     THEORY;
 }

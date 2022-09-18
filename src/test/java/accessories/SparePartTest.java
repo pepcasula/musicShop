@@ -5,18 +5,18 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class PartSpareTest {
+public class SparePartTest {
 
-    PartSpare partSpare;
+    SparePart partSpare;
 
     @Before
     public void before(){
-        partSpare = new PartSpare(
+        partSpare = new SparePart(
                 "22\" Bass Drumhead PTH-22PL",
                 "Pearl",
                 38.90,
                 47.90,
-                SparePartType.DRUM_PART
+                SparePartType.DRUMS_PART
         );
     }
     
@@ -71,7 +71,7 @@ public class PartSpareTest {
 
     @Test
     public void canGetSparePartType(){
-        assertEquals(SparePartType.DRUM_PART, partSpare.getSparePartType());
+        assertEquals(SparePartType.DRUMS_PART, partSpare.getSparePartType());
     }
 
     @Test

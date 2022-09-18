@@ -2,24 +2,24 @@ package accessories;
 
 public class OtherAccessory extends Accessory {
 
-    ItemCategory itemCategory;
+    OtherCategory otherCategory;
 
     public OtherAccessory(
             String description,
             String brand,
             double wholesalePrice,
             double price,
-            ItemCategory itemCategory
+            OtherCategory otherCategory
     ) {
         super(description, brand, wholesalePrice, price);
-        this.itemCategory = itemCategory;
+        this.otherCategory = otherCategory;
     }
 
-    public ItemCategory getItemCategory() {
-        return itemCategory;
+    public OtherCategory getType() {
+        return otherCategory;
     }
 
-    public void setItemCategory(ItemCategory itemCategory) {
-        this.itemCategory = itemCategory;
+    public void setType(OtherCategory itemCategory) {
+        this.otherCategory = itemCategory;
     }
 }

@@ -7,16 +7,17 @@ import static org.junit.Assert.assertEquals;
 
 public class CaseTest {
 
-    Case case1;
+    Case1 case1;
 
     @Before
     public void before(){
-        case1 = new Case(
+        case1 = new Case1(
                 "Bass Guitar Bag KPEB99",
                 "Kinsman",
                 42.90,
                 54.90,
-                CaseType.GUITAR_BAG
+                CaseType.GUITAR_BAG,
+                "Brown"
         );
     }
 
@@ -78,5 +79,16 @@ public class CaseTest {
     public void canSetCaseType(){
         case1.setCaseType(CaseType.STRING_CASE);
         assertEquals(CaseType.STRING_CASE, case1.getCaseType());
+    }
+
+    @Test
+    public void canGetColour(){
+        assertEquals("Brown", case1.getColour());
+    }
+
+    @Test
+    public void canSetColour(){
+        case1.setColour("Bronze");
+        assertEquals("Bronze", case1.getColour());
     }
 }

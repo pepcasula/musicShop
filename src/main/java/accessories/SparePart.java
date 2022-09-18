@@ -1,10 +1,10 @@
 package accessories;
 
-public class PartSpare extends Accessory{
+public class SparePart extends Accessory{
 
     SparePartType sparePartType;
 
-    public PartSpare(
+    public SparePart(
             String description,
             String brand,
             double wholesalePrice,
