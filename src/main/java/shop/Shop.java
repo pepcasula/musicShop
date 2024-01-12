@@ -16,4 +16,12 @@ public class Shop {
         list.clear();
     }
 
+    public Stock getStock() {
+        return stock;
+    }
+
+    public Basket getBasket() {
+        return basket;
+    }
+
 }
