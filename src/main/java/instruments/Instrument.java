@@ -35,6 +35,7 @@ public abstract class Instrument implements ISell, IPlay {
         this.insuranceFactor = (int)Math.round(this.price / 25);
     }
 
+    @Override
     public double calculateMarkup() {
         return this.price - this.wholesalePrice;
     }
@@ -55,18 +56,22 @@ public abstract class Instrument implements ISell, IPlay {
         this.brand = brand;
     }
 
+    @Override
     public double getWholesalePrice() {
         return wholesalePrice;
     }
 
+    @Override
     public void setWholesalePrice(double wholesalePrice) {
         this.wholesalePrice = wholesalePrice;
     }
 
+    @Override
     public double getPrice() {
         return price;
     }
 
+    @Override
     public void setPrice(double price) {
         this.price = price;
     }
@@ -87,6 +92,7 @@ public abstract class Instrument implements ISell, IPlay {
         this.colour = colour;
     }
 
+    @Override
     public int getDeliveryFactor() {
         return deliveryFactor;
     }
@@ -95,6 +101,7 @@ public abstract class Instrument implements ISell, IPlay {
         this.deliveryFactor = deliveryFactor;
     }
 
+    @Override
     public int getSetupFactor() {
         return setupFactor;
     }
@@ -103,6 +110,7 @@ public abstract class Instrument implements ISell, IPlay {
         this.setupFactor = setupFactor;
     }
 
+    @Override
     public int getInsuranceFactor(){
         return this.insuranceFactor;
     }
